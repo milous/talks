@@ -8,3 +8,7 @@
 ## Jak rozmluvit Tracy?
 - https://github.com/milous/tracy-extension-example
 - https://www.youtube.com/watch?v=JpicmBnrslo
+
+
+## Jak přistupovat k validaci Nette formulářů
+- https://www.youtube.com/watch?v=EWrXusUdXAg
