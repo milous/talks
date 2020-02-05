@@ -5,3 +5,6 @@
 - https://www.youtube.com/watch?v=IhMfTg_UFmo
 
 
+## Jak rozmluvit Tracy?
+- https://github.com/milous/tracy-extension-example
+- https://www.youtube.com/watch?v=JpicmBnrslo
