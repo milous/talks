@@ -1,0 +1,23 @@
+services:
+	-
+		factory: Database
+		arguments:
+			name: 'main database'
+		autowired: Database
+
+	backupDatabase:
+		factory: Database('backup database')
+
+	-
+		factory: \INeedDatabase
+
+	-
+		factory: \INeedBackupDatabase
+		arguments:
+			database: @backupDatabase
+
+	-
+		factory: \stdClass
+		setup:
+			- $property = 'value'
+

@@ -1,0 +1,12 @@
+services:
+	presenterAsService:
+		factory: InjectPresenter
+
+	injectedService:
+		factory: InjectedService
+
+	-
+		factory: MultiInjectedService
+
+	-
+		factory: MultiInjectedService

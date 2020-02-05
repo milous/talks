@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html class="no-js disable-transition" lang="cs">
+
+<head>
+	<meta charset="utf-8">
+	<title id="snippet--title">Nette DI kontejner</title>
+
+	<script async defer
+			src="https://www.peckadesign.cz/js/modernizr.js?version=a4b96b2675dd00e851b6516d9db9e88b7b2a71ec"
+			type="text/javascript"></script>
+	<script async defer src="https://www.peckadesign.cz/js/app.js?version=76494cba68d7ce026cea6969a08c80217f2fb456"
+			type="text/javascript"></script>
+
+	<link href="https://www.peckadesign.cz/styles/styles.css?version=b73923a160c5c105092a295e15ec818b63b96ed2"
+		  media="screen" rel="stylesheet" type="text/css">
+
+	<link as="font" crossorigin="anonymous"
+		  href="https://www.peckadesign.cz/webfonts/peckadesign.woff2?version=925609003ab9b7b4d274f9cde669173ee9f83c34"
+		  rel="preload" type="font/woff2">
+	<link as="font" crossorigin="anonymous"
+		  href="https://www.peckadesign.cz/webfonts/373578_0_0.woff2?version=919000afb9f30dbee6f070dc428cea8f2ea563fa"
+		  rel="preload" type="font/woff2">
+	<link as="font" crossorigin="anonymous"
+		  href="https://www.peckadesign.cz/webfonts/373578_1_0.woff2?version=83b8dddf30fac9523df0c67f1631f7a4ff47ac2d"
+		  rel="preload" type="font/woff2">
+	<link as="font" crossorigin="anonymous"
+		  href="https://www.peckadesign.cz/webfonts/373578_2_0.woff2?version=63b3f687620398b9b658858408883b0f40ca7a17"
+		  rel="preload" type="font/woff2">
+
+	<meta content="#e9473f" name="theme-color">
+</head>
+
+
+<body>
+<div id="fb-root"></div>
+<div id="page-wrap">
+
+	<header class="header" role="banner">
+		<div class="l-in-box u-p-0">
+			<p class="header__logo">
+				<a class="header__logo-link logo" href="/">
+					<svg class="logo__svg" height="89" width="205" xmlns="http://www.w3.org/2000/svg"
+						 xmlns:xlink="http://www.w3.org/1999/xlink">
+						<path class="logo__part logo__part--P"
+							  d="M20.55 0v41.1H0v20.54h20.55V41.1h20.73c11.17 0 20.36-9.47 20.36-20.55S52.66 0 41.58 0H20.55z"
+							  fill="#FFF"></path>
+						<path class="logo__part logo__part--text"
+							  d="M169 64.74h3.17v-3.1H169v3.1zm-56.62 12.75s-1 2.38-3.98 2.55c-2.98.18-2.77-1.86-2.77-2.4 0-.53.36-2.07 3.5-2.38 2.34-.17 3.25-.29 3.25-.29v2.52zm2.83.22c-.04-1.97 0-5.79 0-5.79s.23-4.85-6.2-4.85c-6 0-6.04 5.07-6.04 5.07h2.66s.34-2.7 3.44-2.77c3.1-.06 3.4 2.24 3.34 3.47-4.2.34-8.56.44-9.75 3.9-.85 2.8 1.2 5.29 4.3 5.44 3.1.16 4.97-1.14 5.69-2 .51 1.23 1.77 2.03 3.85 2V79.8s-1.26-.13-1.3-2.1zm84.13-10.63c-3.68.16-5.04 2.33-5.04 2.33l-.31-2.17h-2.73V82.2h3.2v-9.66s.52-2.77 4.3-2.77c2.87.14 3.07 2.33 3.07 4.95v7.48H205V71.67s-.75-4.72-5.66-4.6zM182.09 86.6c-1.43 0-4.2-.17-4.4-2.5-.13-1.73 1.47-2.1 1.47-2.1h4.36s2.39.03 2.46 2c.07 1.97-2.46 2.6-3.89 2.6zm-.44-16.97c1.86 0 3.36 1.3 3.36 2.9 0 1.6-1.5 2.9-3.36 2.9-1.86 0-3.36-1.3-3.36-2.9 0-1.6 1.5-2.9 3.36-2.9zm4.16 10.4c-2.22-.47-3.93-.36-3.93-.36h-2.38s-1.53 0-1.74-1.44c-.04-.4.36-.76.83-1.04.9.44 1.95.7 3.06.7 3.43 0 6.2-2.4 6.2-5.36 0-1.2-.45-2.3-1.21-3.19.27-.43.94-1.22 2.1-1.08v-2.06s-2.5-.36-3.57 1.92c-1-.6-2.2-.95-3.52-.95-3.43 0-6.2 2.4-6.2 5.36 0 1.37.6 2.61 1.57 3.56-.8.55-3.7 2.83-.1 5.18-1.2.5-2.16 1.83-1.99 3.66.17 1.84 2.12 4 6.72 4.03 4.6.04 6.72-2.2 7.09-4.03.38-1.83-.24-4.16-2.93-4.9zM169 82.2h3.16V67.09H169v15.1zm-7.34-8.7c-2.76-.72-3.95-1.16-3.99-2.46-.03-1.3 1.55-1.6 2.52-1.65.96-.05 2.77.31 3.25 1.98h2.62s-.38-4.5-5.86-4.28c-5.22.22-5.56 3.28-5.56 4.55s.92 2.94 4.2 3.73c3.03.8 4.4 1.24 4.36 2.84-.1 1.2-1.13 2.07-2.85 2.03-1.72-.03-3.32-1.2-3.66-2.5h-2.63s.85 4.7 6.34 4.7c4.5 0 5.8-2.7 5.9-4.3.1-1.6-.78-3.66-4.64-4.63zm-20.4-.14c.03-.34.58-3.94 4.12-3.97 4.03 0 4.13 3.97 4.13 3.97h-8.25zm4.1-6.27c-5.23.23-7.07 4-7.07 7.4.04 3.9 2.08 7.46 7.33 7.7a6.15 6.15 0 0 0 6.4-4.47h-2.55c-.2.47-1.33 2.2-4.05 2.2-3.82-.23-4.2-4.4-4.2-4.4h11.22c.4-5.03-2.32-8.53-7.08-8.43zM126.66 79.6h-4.53V64.34h3.27c3.06-.06 7.84 1.27 7.87 7.64-.2 7.73-6.61 7.63-6.61 7.63zm-1.26-17.93c-5.42-.07-6.37 0-6.37 0V82.2h7.46s9.2.14 9.79-9.73c.2-7.9-5.47-10.73-10.88-10.8zm-24.61 5.4h-3.55l-5.04 6.06V61.68h-3.24v20.5h3.13V75.3l6 6.87h3.55l-6.99-8 6.14-7.1zM79.42 69.6c3.37-.3 4.25 2.23 4.32 2.8h2.8s-.86-5.5-7.03-5.34a7.08 7.08 0 0 0-7.19 7.56c.1 2.81 1.4 7.48 7.26 7.71 4.1.07 6.61-2.6 6.96-5.6h-2.8s-.75 2.9-4.06 3c-3.3.1-4.4-3-4.33-5.03.07-2.04.7-4.8 4.07-5.1zm-19.95 3.73c.03-.33.58-3.93 4.13-3.97 4.02 0 4.12 3.97 4.12 3.97h-8.25zm4.1-6.26c-5.23.23-7.07 4-7.07 7.4.04 3.9 2.08 7.46 7.33 7.7 5.25.23 6.41-4.47 6.41-4.47H67.7c-.2.47-1.33 2.2-4.06 2.2-3.82-.23-4.2-4.4-4.2-4.4h11.22c.4-5.04-2.32-8.54-7.07-8.43zM50.3 71.6h-6.1v-7.4h5.45c.75 0 3.72.33 3.72 3.7s-3.07 3.7-3.07 3.7zm-.58-9.93h-8.63v20.5h3.07v-8.04h6.14s5.8-.23 5.8-6.17c-.04-5.43-4.47-6.3-6.38-6.3z"
+							  fill="#FFF" mask="url(#b)"></path>
+					</svg>
+				</a>
+			</p>
+
+			<hr class="u-hidden">
+		</div>
+	</header>
+
+	<main class="main" id="main" role="main">
+		<article>
+			<div class="page-head-ie-wrap">
+				<header class="page-head page-head--homepage page-head--fullscreen">
+					<div class="page-head__content">
+						<div class="page-head__content-in">
+							<div class="l-in-box">
+								<h1 class="page-head__heading">Nette DI kontejner</h1>
+
+								<h3>Milan Otáhal</h3>
+
+
+								<ul class="ul--reset ul--inline page-head__nav page-head__nav--large">
+									<li class="page-head__nav-item">
+										<a class="page-head__nav-link complex-link">
+											<span class="complex-link__underline">su@milous.cz</span>
+										</a>
+									</li>
+									<li class="page-head__nav-item">
+										<a class="page-head__nav-link complex-link">
+											<span class="complex-link__underline">https://github.com/milous</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</header>
+			</div>
+		</article>
+	</main>
+	<script>
+		window.addEventListener("keydown", function (event) {
+			if (event.key === 'ArrowRight') {
+				window.location.href = '1_static_container';
+			}
+		});
+	</script>
+</div>
+</body>
+</html>

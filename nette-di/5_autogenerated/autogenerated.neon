@@ -1,0 +1,25 @@
+services:
+	lorem1:
+		factory: Lorem
+		autowired: self
+		tags:
+			- b
+
+	lorem2:
+		factory: Lorem
+		tags:
+			- b
+
+	lorem3:
+		factory: Lorem
+		tags:
+			- a
+
+	one: Locator(a: Lorem, b: Lorem, c: Lorem, d: Lorem)
+	two: Locator(tagged: a)
+
+	std:
+		factory: stdClass
+		setup:
+			- $tagged = tagged(b)
+			- $byType = @container::findByTag('b')

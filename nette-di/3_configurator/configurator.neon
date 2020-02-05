@@ -1,0 +1,8 @@
+services:
+
+constants:
+	CONSTANT_CREATED: "in initialize method"
+
+http:
+	headers!:
+		'X-Powered-By': 'The best PHP framework is Nette' # $response->setHeader('X-Powered-By', 'Nette Framework 3');

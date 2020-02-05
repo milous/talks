@@ -1,0 +1,19 @@
+parameters:
+	testParameter: 'testParameterValue'
+
+services:
+	test: DateTime
+
+	-
+		factory: \stdClassWithMethod
+		setup:
+			- $someProperty = "value"
+			- $data = {"key": "value"}
+			- '$arr[]' = 'aaa'
+			- $testService = @test
+			- method = @test
+			- method = @self
+			- method = %testParameter%
+			# deprecated
+			- "$service->deprecatedProperty = ?" ('deprecatedValue')
+			- "$service->arr[] = ?" ('deprecated array property')
